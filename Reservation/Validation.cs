@@ -49,5 +49,11 @@ namespace Reservation
             if (rodzaj == "normalny" & cena != 18) throw new Exception("Niepoprawna cena!");
 
         }
+
+        public bool ValidateIfReservationIsNull(Reservation reservation)
+        {
+             if (reservation == null) throw new ArgumentNullException(nameof(reservation));
+             throw new Exception ("Rezerwacja nieutworzona!");
+        }   
     }
 }

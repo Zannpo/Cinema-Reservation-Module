@@ -222,5 +222,13 @@ namespace ReservationUnitTests
             }
 
         }
+
+        [TestMethod]
+        public void ValidateIfReservationIsNull()
+        {
+            var validate = new Reservation.Validation.ValidateIfReservationIsNull();
+            Action action = () => validate.Validate(null);
+            action.ShouldThrow<ArgumentNullException>();           
+        }
     }
 }
